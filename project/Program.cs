@@ -23,6 +23,13 @@ namespace Oregon_Trail
             int oxenprice = 20;
             double foodprice = .25;
             int weaponsprice = 15;
+            int wgnldrhealth = 100;
+            int hunger = 100;
+            int daysOnTrail = 0;
+            int pasngr0hlth = 100;
+            int pasngr1hlth = 100;
+            int pasngr2hlth = 100;
+            int pasngr3hlth = 100;
 
 
             Console.WriteLine("The Oregon Trail");
@@ -119,18 +126,18 @@ namespace Oregon_Trail
 
             System.Threading.Thread.Sleep(1000);
 
-            Console.WriteLine("In order to survive, you will need to purchase supplies! Check out the store catalog and purchase items based on the ammount of money you have if you want to know your balance, type balance!");
+            Console.WriteLine("In order to survive, you will need to purchase supplies! Check out the store catalog and purchase items based on the ammount of money you have if you want to know your balance, type balance! Remember: the trail takes 4-6 months to travel so purchse accordingly");
 
-            Console.WriteLine("Oxen - $20 per ox - max 20");
+            Console.WriteLine("Oxen - $20 per ox - max 20 - 10 reccomended");
             System.Threading.Thread.Sleep(500);
 
-            Console.WriteLine("Food - .25 per pound - max 2000 LBS ");
+            Console.WriteLine("Food - .25 per pound - max 2000 LBS - 900 LBS Recommended ");
             System.Threading.Thread.Sleep(500);
 
-            Console.WriteLine("weapons - $15 each - max 20");
+            Console.WriteLine("weapons - $15 each - max 20 - 10 reccomended");
             System.Threading.Thread.Sleep(500);
 
-            Console.WriteLine("Box of wagon parts - $30 each - max 10 boxes");
+            Console.WriteLine("Box of wagon parts - $30 each - max 10 boxes - 3 reccomended");
             System.Threading.Thread.Sleep(500);
 
             Console.WriteLine("Now it is time to purchase your items!");
@@ -170,26 +177,23 @@ namespace Oregon_Trail
             int oxenfinal = oxen * oxenprice;
             int wagpartsfinal = wagparts * wagpartsprice;
             int weaponsfinal = weaponsprice * weapons;
-            double finalprices = weaponsfinal +
+            double finalprices = weaponsfinal + wagpartsfinal + oxenfinal + foodfinal;
 
 
             Console.WriteLine("Here is your receipt!");
-            Console.WriteLine("Oxen " + oxenfinal);
-            Console.WriteLine("Wagon Parts " + wagpartsfinal);
-            Console.WriteLine("Weapons " + weaponsfinal);
-            Console.WriteLine("Food " + foodfinal);
-            Console.WriteLine("Total = ")
+            Console.WriteLine(" ");
+            Console.WriteLine("Oxen = $" + oxenfinal);
+            Console.WriteLine(" ");
+            Console.WriteLine("Wagon Parts = $" + wagpartsfinal);
+            Console.WriteLine(" ");
+            Console.WriteLine("Weapons = $" + weaponsfinal);
+            Console.WriteLine(" ");
+            Console.WriteLine("Food = $" + foodfinal);
+            Console.WriteLine(" ");
+            Console.WriteLine("Total = $" + finalprices);
 
 
-
-
-Console.WriteLine(foodfinal);
-
-
-
-
-
-
+            Console.WriteLine("Time to Travel the Trail");
 
 
 
@@ -199,8 +203,136 @@ Console.WriteLine(foodfinal);
 
 
         }
+
+
+        public static string activities()
+        {
+            Console.WriteLine("Days On Trail =  " + daysOnTrail++);
+            Console.WriteLine("Food = " + food - 5)
+if (food == 0 || food <= 5)
+
+                pasngr0hlth - 5
+pasngr1hlth - 5
+ pasngr2hlth - 5
+ pasngr3hlth - 5
+wgnldrhealth - 5
+
+Console.WriteLine(name + " health = " wgnldrhealth);
+            Console.WriteLine(PassengerList.get[0] + " health = " pasngr0hlth);
+            Console.WriteLine(PassengerList.get[1] + " health = " pasngr1hlth);
+            Console.WriteLine(PassengerList.get[2] + " health = " pasngr2hlth);
+            Console.WriteLine(PassengerList.get[3] + " health = " pasngr3hlth);
+
+
+
+
+            for (int riversToCross = random.next(1, 5); riversToCross != 0; riversToCross--)
+            {
+
+                Console.WriteLine(" You have come across a river, you have to cross it you can either wait 3 days for a ferry or try and float you wagon across! ");
+                Console.WriteLine("Do you: float or wait?");
+                string riverOption = Console.ReadLine();
+
+                if (riverOption == " float" || "Float")
+                {
+                    int sinkorswim = random.next(1, 2);
+
+                    if (sinkorswim == 1)
+                    {
+                        Console.WriteLine("You tried to float your wagon and made it!");
+                        Console.WriteLine(" Time to continue on the trail! ");
+                    }
+                }
+
+                if (riverOption == " wait" || "Wait")
+                {
+                    food - 15
+                    Console.WriteLine("you made it across the river!")
+                    Console.WriteLine(" Time to continue on the trail! ");
+                }
+
+                int badEvents = random.next(1, 3);
+                int personToDie = random.next(0, 4);
+
+                if (badEvents == 1)
+                {
+                    Console.WriteLine(PassengerList.get[personToDie] + " died of dysentary");
+                    PassengerList.Remove(personToDie);
+
+
+                }
+
+                if (badEvents == 2)
+                {
+                    Console.WriteLine("your wagon broke!" + "use a box of parts to reapir it");
+
+                    if (wagparts == 0)
+                    {
+                        Console.WriteLine("you have no wagon parts, you lose! :(");
+
+                else{
+
+                            wagparts--;
+                        }
+                    }
+
+                    if (badEvents == 3)
+                    {
+                        Console.WriteLine("You are being attacked by a tribe of indians ");
+                        Console.WriteLine(" you use your weapons to fend them off ");
+                        Console.WriteLine("However, the indians are better at fighting and " + PassengerList.get[personToDie] + " dies");
+                        PassengerList.Remove(personToDie);
+                        weapons-- }
+
+
+                    int townStop = random.next(1, 2);
+
+                    if (townStop == 1)
+                        Console.WriteLine("you are stopping in the town of");
+
+
+
+
+                }
+
+            }
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+    }
     }
 }
 
 
+     
+int riversCrossed = random.next(10);
 
